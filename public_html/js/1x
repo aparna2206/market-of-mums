@@ -1,0 +1,52 @@
+function show_edit_user_frm(id){
+  
+                $.post('/ajax/regform.php', {id: id}, function(data) {
+                                jQuery('#reg_form').html(data);
+//alert('data='+ data);
+                });
+}
+
+
+
+function update_user() {
+
+var uid = document.getElementById('uid').value;
+
+var name = document.getElementById('name').value;
+var company = document.getElementById('company').value;
+var email = document.getElementById('email').value;
+var username = document.getElementById('usr').value;
+var password = document.getElementById('re-password').value;
+
+var address = document.getElementById('address').value;
+var city = document.getElementById('city').value;
+
+var state = document.getElementById('state').value;
+var pin_code = document.getElementById('pin').value;
+var phone = document.getElementById('phone').value;
+var mobile = document.getElementById('mobile').value;
+var country = document.getElementById('country').value;
+var latitude = document.getElementById('latitude').value;
+var longitude = document.getElementById('longitude').value;
+var member_type = document.getElementById('member_type').value;
+var user_type = document.getElementById('user_type').value;
+alert('hello');
+                $.post('/ajax/update.php', {id:uid,name:name,company: company,email: email,username: username,password: password,address: address,city: city,state: state,pin_code: pin_code,phone: phone,mobile: mobile,country: country,latitude: latitude,longitude: longitude,member_type: member_type,user_type: user_type}, function(data) {
+                              
+alert('data='+ data);
+                });
+
+
+
+}
+
+function delete_user(){
+
+
+
+
+
+
+
+
+}

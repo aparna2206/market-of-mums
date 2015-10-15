@@ -1,0 +1,186 @@
+function show_edit_user_frm(id){
+  
+                $.post('/ajax/edit_user_form.php', {id: id}, function(data) {
+                                jQuery('#user_form').html(data);
+//alert('data='+ data);
+                });
+}
+
+
+
+function add_user() {
+
+var user_id = document.getElementById('user_id').value;
+var first_name = document.getElementById('first_name').value;
+var last_name = document.getElementById('last_name').value;
+var password = document.getElementById('password').value;
+var re_password=document.getElementById('re_password').value
+var email = document.getElementById('email').value;
+var user_type = document.getElementById('user_type').value;
+var address = document.getElementById('address').value;
+var city = document.getElementById('city').value;
+var state = document.getElementById('state').value;
+var pin = document.getElementById('pin').value;
+var other_contact = document.getElementById('other_contact').value;
+var mobile = document.getElementById('mobile').value;
+var user_type = document.getElementById('user_type').value;
+var delivery_address = document.getElementById('delivery_address').value;
+var delivery_city = document.getElementById('delivery_city').value;
+var delivery_state = document.getElementById('delivery_state').value;
+var delivery_pin = document.getElementById('delivery_pin').value;
+var sts = document.getElementById('status').value;
+if(password !=''){
+	if(re_password !=''){
+		if(password != re_password){
+	   		alert('Password and re-password not matching.!');
+			   return false;
+		
+		}
+	}else{
+	   alert('Re-password field should not be empty.!');
+	   return false;
+	}
+}else{
+	   alert('Password field should not be empty.!');
+	   return false;
+
+}
+                $.post('/ajax/operations.php', {oper:'add_user',user_id:user_id,first_name:first_name,last_name:last_name,email: email,password: password,re_password:re_password,address: address,city: city,state: state,pin: pin,other_contact: other_contact,mobile: mobile,user_type: user_type,delivery_address:delivery_address,delivery_city:delivery_city,delivery_state:delivery_state,delivery_pin:delivery_pin,sts:sts}, function(data) {
+               if(data == 1){               
+                	$('#user_table').bootstrapTable('refresh', {
+	                    url: '/json_data/user_list_json.php'
+        	        });
+	   		alert('User added succesfully.!');
+		}else{
+	   		alert('Unable to add User.!');
+		}
+
+                });
+}
+function update_user() {
+
+var user_id = document.getElementById('user_id').value;
+var first_name = document.getElementById('first_name').value;
+var last_name = document.getElementById('last_name').value;
+var password = document.getElementById('password').value;
+var re_password=document.getElementById('re_password').value
+var email = document.getElementById('email').value;
+var user_type = document.getElementById('user_type').value;
+var address = document.getElementById('address').value;
+var city = document.getElementById('city').value;
+var state = document.getElementById('state').value;
+var pin = document.getElementById('pin').value;
+var other_contact = document.getElementById('other_contact').value;
+var mobile = document.getElementById('mobile').value;
+var user_type = document.getElementById('user_type').value;
+var delivery_address = document.getElementById('delivery_address').value;
+var delivery_city = document.getElementById('delivery_city').value;
+var delivery_state = document.getElementById('delivery_state').value;
+var delivery_pin = document.getElementById('delivery_pin').value;
+var sts = document.getElementById('status').value;
+if(password !=''){
+	if(re_password !=''){
+		if(password != re_password){
+	   		alert('Password and re-password not matching.!');
+			   return false;
+		
+		}
+	}else{
+	   alert('Re-password field should not be empty.!');
+	   return false;
+	}
+}
+                $.post('/ajax/operations.php', {oper:'update_user',user_id:user_id,first_name:first_name,last_name:last_name,email: email,password: password,re_password:re_password,address: address,city: city,state: state,pin: pin,other_contact: other_contact,mobile: mobile,user_type: user_type,delivery_address:delivery_address,delivery_city:delivery_city,delivery_state:delivery_state,delivery_pin:delivery_pin,sts:sts}, function(data) {
+               if(data == 1){               
+                	$('#user_table').bootstrapTable('refresh', {
+	                    url: '/json_data/user_list_json.php'
+        	        });
+	   		alert('User updated succesfully.!');
+		}else{
+	   		alert('Unable to update User.!');
+		}
+
+                });
+}
+
+//function for delete user
+
+
+function delete_user() {
+var user_id = document.getElementById('user_id').value;
+ $.post('/ajax/operations.php', {oper:'delete_user',user_id:user_id}, function(data) {
+               if(data == 1){               
+                	$('#user_table').bootstrapTable('refresh', {
+	                    url: '/json_data/user_list_json.php'
+        	        });
+	   		alert('User Deleted succesfully.!');
+			show_edit_user_frm('');
+		}else{
+	   		alert('Unable to Delete User.!');
+		}
+                              
+                });
+}
+function show_edit_category_frm(id){
+  
+                $.post('/ajax/edit_category_form.php', {id: id}, function(data) {
+                                jQuery('#category_form').html(data);
+//alert('data='+ data);
+                });
+}
+
+
+
+function add_user() {
+var name = document.getElementById('name').value;
+var description = document.getElementById('description').value;
+var sts = document.getElementById('status').value;
+var is_visible = document.getElementById('is_visible').value;
+                $.post('/ajax/operations.php', {oper:'add_category',name:name,description:description,sts:sts,is_visible:is_visible}, function(data) {
+               if(data == 1){               
+                	$('#category_table').bootstrapTable('refresh', {
+	                    url: '/json_data/category_list_json.php'
+        	        });
+	   		alert('User added succesfully.!');
+		}else{
+	   		alert('Unable to add User.!');
+		}
+
+                });
+}
+function update_user() {
+var id = document.getElementById('id').value;
+var name = document.getElementById('name').value;
+var description = document.getElementById('description').value;
+var sts = document.getElementById('status').value;
+var is_visible = document.getElementById('is_visible').value;
+}
+                $.post('/ajax/operations.php', {oper:'update_category',name:name,description:description,sts:sts,is_visible:is_visible}, function(data) {
+               if(data == 1){               
+                	$('#category_table').bootstrapTable('refresh', {
+	                    url: '/json_data/category_list_json.php'
+        	        });
+	   		alert('User updated succesfully.!');
+		}else{
+	   		alert('Unable to update User.!');
+		}
+
+                });
+}
+
+//function for delete user
+
+
+function delete_user() {
+var id = document.getElementById('id').value;
+ $.post('/ajax/operations.php', {oper:'delete_category',id:id}, function(data) {
+               if(data == 1){               
+	   		alert('User Deleted succesfully.!');
+			show_edit_category_frm('');
+		}else{
+	   		alert('Unable to Delete User.!');
+		}
+                              
+                });
+}
+

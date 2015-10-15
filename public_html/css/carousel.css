@@ -1,0 +1,159 @@
+/* GLOBAL STYLES
+-------------------------------------------------- */
+/* Padding below the footer and lighter body text */
+
+ 
+
+
+/* CUSTOMIZE THE NAVBAR
+-------------------------------------------------- */
+
+/* Special class on .container surrounding .navbar, used for positioning it into place. */
+.hd{ position:relative;}
+
+.navbar-wrapper {
+
+}
+
+/* Flip around the padding for proper display in narrow viewports */
+.navbar-wrapper > .container {
+  padding-right: 0;
+  padding-left: 0;
+}
+.navbar-wrapper .navbar {
+ 
+}
+.navbar-wrapper .navbar .container {
+  width: auto;
+}
+
+
+/* CUSTOMIZE THE CAROUSEL
+-------------------------------------------------- */
+
+/* Carousel base class */
+.carousel {
+  height: 300px;
+}
+/* Since positioning the image, we need to help out the caption */
+.carousel-caption {
+  z-index: 10;
+}
+
+/* Declare heights because of positioning of img element */
+.carousel .item {
+  height: 300px;
+}
+
+.carousel .banner1 {
+  height:300px;
+  background: url(../images/home_banenr_bg.jpg) repeat left top ;
+}
+
+.carousel .banner2 {
+  height: 300px;
+  background: url(../images/home_banenr_bg.jpg)  repeat left top;
+}
+
+.carousel .banner3 {
+  height: 300px;
+  background: url(../images/home_banenr_bg.jpg)  repeat left top;
+}
+
+
+
+
+/* MARKETING CONTENT
+-------------------------------------------------- */
+
+/* Center align the text within the three columns below the carousel */
+.marketing .col-lg-4 {
+  margin-bottom: 20px;
+  text-align: center;
+}
+.marketing h2 {
+  font-weight: normal;
+}
+.marketing .col-lg-4 p {
+  margin-right: 10px;
+  margin-left: 10px;
+}
+
+
+/* Featurettes
+------------------------- */
+
+.featurette-divider {
+  margin: 80px 0; /* Space out the Bootstrap <hr> more */
+}
+
+/* Thin out the marketing headings */
+.featurette-heading {
+  font-weight: 300;
+  line-height: 1;
+  letter-spacing: -1px;
+}
+
+
+/* RESPONSIVE CSS
+-------------------------------------------------- */
+
+@media (min-width: 768px) {
+  /* Navbar positioning foo */
+ 
+  .navbar-wrapper .container {
+ 
+  }
+  .navbar-wrapper .navbar {
+    padding-right: 0;
+    padding-left: 0;
+  }
+
+  /* The navbar becomes detached from the top, so we round the corners */
+  .navbar-wrapper .navbar {
+ 
+  }
+
+  /* Bump up size of carousel content */
+  .carousel-caption p {
+    margin-bottom: 20px;
+    font-size: 21px;
+    line-height: 1.4;
+  }
+
+  .featurette-heading {
+    font-size: 50px;
+  }
+}
+
+@media (min-width: 992px) {
+  .featurette-heading {
+    margin-top: 152px;
+  }
+}
+@media (max-width:767px){
+		.carousel .banner1, .carousel .banner2, .carousel .banner3 {
+    height: 278px ;
+	background-size:100%;
+}
+.carousel {
+    height:auto;
+}
+	}
+
+@media (max-width:480px){
+	.carousel .banner1, .carousel .banner2, .carousel .banner3 {
+    height: 184px ;
+	background-size:100%;
+}
+.carousel {
+    height:auto;
+}
+	}
+@media (max-width:414px) {
+
+.carousel .banner1, .carousel .banner2, .carousel .banner3 {
+    height: 130px !important;
+	background-size:100%;
+}
+	}
